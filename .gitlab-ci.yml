@@ -1,0 +1,13 @@
+# to make this work
+# put this file to repo root directory
+pages:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r docs/. .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
